@@ -1,0 +1,31 @@
+
+  .bar1{
+    fill: steelblue;
+  }
+
+  .bar1:hover{
+    fill: black;
+  }
+
+  .bar2{
+    fill: orange;
+  }
+
+  .bar2:hover{
+    fill: red;
+  }
+
+
+
+	.axis {
+	  font: 10px sans-serif;
+	}
+
+	.axis path,
+	.axis line {
+	  fill: none;
+	  stroke: black;
+	  stroke-width:2px;
+	  shape-rendering: crispEdges;
+	}
+

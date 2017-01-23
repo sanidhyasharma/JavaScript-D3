@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+<link rel="stylesheet" type="text/css" href="graduatestyle.css">
+</head>
+
+<body>
+  <h1 style="text-align:center;">State Wise Bar Graph Of Educated Males and Females </h1>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script>
+// set the dimensions of the canvas
+var margin = {top: 20, right: 20, bottom: 210, left: 100},
+    width = 1000 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
+
+
+// set the ranges
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+var y0 = d3.scale.linear().domain([300, 1100]).range([height, 0]);
+var y1 = d3.scale.linear().domain([20, 80]).range([height, 0]);
+
+// define the axis
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom")
+
+
+var yAxis = d3.svg.axis()
+    .scale(y0)
+    .orient("left")
+    .ticks(20);
+
+
+// add the SVG element
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", 
+          "translate(" + margin.left + "," + margin.top + ")");
+
+
+// load the data
+d3.json("graduatePopulation.json", function(error, data) {
+
+    data.forEach(function(d) {
+        d.State = d.State;
+        d.Education_Males = +d.Education_Males;
+         d.Education_Females = +d.Education_Females;
+    });
+  console.log(data);
+  // scale the range of the data
+  x.domain(data.map(function(d) { return d.State; }));
+  y0.domain([0, d3.max(data, function(d) { return d.Education_Males;})]);
+  y1.domain([0, d3.max(data, function(d) {
+  
+   return d.Education_Females;})]);
+
+  // add axis
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-1.2em")
+      .attr("dy", "-.55em")
+      .attr("transform", "rotate(-90)" );
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", "-90")
+      .attr("x", "-100")
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Gender Wise Educated Males and Females");
+
+
+  // Add bar chart
+  var bars=svg.selectAll("bar")
+      .data(data)
+    .enter()
+    bars.append("rect")
+      .attr("class", "bar1")
+      .attr("x", function(d) { return x(d.State); })
+      .attr("width", x.rangeBand()/2)
+      .attr("y", function(d) { return y0(d.Education_Males); })
+      .attr("height", function(d,i) { return height - y0(d.Education_Males); });
+
+      bars.append("rect")
+      .attr("class", "bar2")
+      .attr("x", function(d) { return x(d.State) + x.rangeBand()/2; })
+      .attr("width", x.rangeBand()/2)
+      .attr("y", function(d) { return y1(d.Education_Females); })
+      .attr("height", function(d,i) { return height - y1(d.Education_Females); });
+
+});
+function type(d) {
+  d.Education_Males = +d.Education_Males
+    //d.Education_Females = +d.Education_Females
+   
+   return d;
+}
+</script>
+
+</body>

@@ -20,52 +20,65 @@ for (var i =1; i <lines.length;i++)
 	for (var j =0;j<head.length; j++) 
 	{
 	 	//obj[head[j]]=current[j];
-	 	 if(head[j]==='Area Name'|| head[j]==='Educational level - Graduate & above - Males'|| head[j]==='Educational level - Graduate & above - Females')
+	 	 if(current[j]==='All ages'|| head[j]==='Area Name'|| head[j]==='Educational level - Graduate & above - Males'|| head[j]==='Educational level - Graduate & above - Females' || current[j]=='Total')
 	 	 {
-          if( head[j]==='Total'||head[j]==='All ages')
-
-          { 
-
-          	obj[head[j]]=current[j];
+           obj[head[j]]=current[j];
              //obj[head[k]]=literatevalue;
              //obj[agevalue]=literatevalue;
-           }  
+             
           }
           
 	  }
 	        final.push(obj);
-	        console.log(final)
  }
+//console.log(final)
 
-// function groupBy(array,ageGroup,value)
-// {
 
-// 	var resultArray=[], newObj={};
-// 	array.forEach(function(argsPass)
-// 	{
-// 		if (!newObj[argsPass[ageGroup]])
-// 		 {
-//           newObj[argsPass[ageGroup]] ={};
-//           newObj[argsPass[ageGroup]][ageGroup]=argsPass[ageGroup];
-//           newObj[argsPass[ageGroup]][value]=0;
-//           resultArray.push(newObj[argsPass[ageGroup]]);
+ var onlytotal1=final.filter(function(item)
+{
+return item["Total/ Rural/ Urban"]=="Total" && item["Age-group"] == "All ages";
+});
+//console.log(onlytotal1);
 
-// 		 }
-// 	newObj[argsPass[ageGroup]][value] +=+ argsPass[value];
-// 	});
-// 	return resultArray;
-// };
-// var temp=groupBy(final,'Age-group','Literate - Persons')
-// temp.pop();
-// temp.pop();
+var totalarray1=onlytotal1.map(function(item)
+{
+return{
+	State:item['Area Name'],
+	Education_Males:item['Educational level - Graduate & above - Males'],
+	Education_Females:item['Educational level - Graduate & above - Females']
+};
+});
+//console.log(totalarray1);
 
-// 	//console.log(final);
-// json=JSON.stringify(temp);
-// fs.writeFile('ageWise.json',json,function(err)
-// {
-// 	if(err) return console.log(err);
-// 	console.log("ho gaya bhai")
-// });
+function groupBy(array,ageGroupCol,Males,Females)
+{
+
+	var resultArray=[], newObj={};
+	array.forEach(function(argsPass)
+	{
+		if (!newObj[argsPass[ageGroupCol]])
+		 {
+          newObj[argsPass[ageGroupCol]] ={};
+          newObj[argsPass[ageGroupCol]][ageGroupCol]=argsPass[ageGroupCol];
+          newObj[argsPass[ageGroupCol]][Males]=0;
+          newObj[argsPass[ageGroupCol]][Females]=0;
+          resultArray.push(newObj[argsPass[ageGroupCol]]);
+
+		 }
+	newObj[argsPass[ageGroupCol]][Males] +=+ argsPass[Males];
+	newObj[argsPass[ageGroupCol]][Females] +=+ argsPass[Females];
+	});
+	return resultArray;
+};
+var temp=groupBy(totalarray1,'State','Education_Males','Education_Females')
+
+	console.log(temp);
+json=JSON.stringify(temp);
+fs.writeFile('graduatePopulation.json',json,function(err)
+{
+	if(err) return console.log(err);
+	console.log("ho gaya bhai")
+});
 });
 
 

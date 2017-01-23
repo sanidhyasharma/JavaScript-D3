@@ -1,8 +1,6 @@
 var fs=require("fs");
 var json;
 var final=[];
-var agevalue;
-var literatevalue;
 fs.readFile('finalcsv.csv','utf8',function(err,contents)
 {
 	//console.log(contents);
@@ -19,18 +17,31 @@ for (var i =1; i <lines.length;i++)
 	var current=lines[i].split(",")
 	for (var j =0;j<head.length; j++) 
 	{
-	 	//obj[head[j]]=current[j];
-	 	 if(head[j]==='Age-group'|| head[j]==='Literate - Persons')
+	 	 if(head[j]==='Age-group'|| head[j]==='Literate - Persons' || head[j]=='Total/ Rural/ Urban' )
 	 	 {
+
            obj[head[j]]=current[j];
-             //obj[head[k]]=literatevalue;
-             //obj[agevalue]=literatevalue;
              
           }
           
 	  }
 	        final.push(obj);
  }
+//console.log(final);
+ var onlytotal=final.filter(function(item)
+{
+return item["Total/ Rural/ Urban"] == "Total" && item["Age-group"] != "All ages"
+});
+console.log(onlytotal);
+
+var totalarray=onlytotal.map(function(item)
+{
+return{
+	Age_group:item['Age-group'],
+	Literate_people:item['Literate - Persons']
+};
+});
+//console.log(totalarray);
 
 function groupBy(array,ageGroup,value)
 {
@@ -50,11 +61,9 @@ function groupBy(array,ageGroup,value)
 	});
 	return resultArray;
 };
-var temp=groupBy(final,'Age-group','Literate - Persons')
-temp.pop();
-temp.pop();
+var temp=groupBy(totalarray,'Age_group','Literate_people')
 
-	console.log(temp);
+//console.log(temp);
 json=JSON.stringify(temp);
 fs.writeFile('ageWise.json',json,function(err)
 {
