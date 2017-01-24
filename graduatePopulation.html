@@ -19,8 +19,7 @@ var margin = {top: 20, right: 20, bottom: 210, left: 100},
 // set the ranges
 var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
-var y0 = d3.scale.linear().domain([300, 1100]).range([height, 0]);
-var y1 = d3.scale.linear().domain([20, 80]).range([height, 0]);
+var y = d3.scale.linear().range([height, 0]);
 
 // define the axis
 var xAxis = d3.svg.axis()
@@ -29,9 +28,11 @@ var xAxis = d3.svg.axis()
 
 
 var yAxis = d3.svg.axis()
-    .scale(y0)
+    .scale(y)
     .orient("left")
     .ticks(20);
+
+
 
 
 // add the SVG element
@@ -49,15 +50,13 @@ d3.json("graduatePopulation.json", function(error, data) {
     data.forEach(function(d) {
         d.State = d.State;
         d.Education_Males = +d.Education_Males;
-         d.Education_Females = +d.Education_Females;
+        d.Education_Females = +d.Education_Females; 
     });
-  console.log(data);
+ // console.log(data);
   // scale the range of the data
   x.domain(data.map(function(d) { return d.State; }));
-  y0.domain([0, d3.max(data, function(d) { return d.Education_Males;})]);
-  y1.domain([0, d3.max(data, function(d) {
-  
-   return d.Education_Females;})]);
+  y.domain([0, d3.max(data, function(d) { return d.Education_Males;})]);
+//  y.domain([0, d3.max(data, function(d) {return d.Education_Females;})]);
 
   // add axis
   svg.append("g")
@@ -88,25 +87,31 @@ d3.json("graduatePopulation.json", function(error, data) {
     .enter()
     bars.append("rect")
       .attr("class", "bar1")
-      .attr("x", function(d) { return x(d.State); })
+      .attr("x", function(d) { return x(d.State) ; })
       .attr("width", x.rangeBand()/2)
-      .attr("y", function(d) { return y0(d.Education_Males); })
-      .attr("height", function(d,i) { return height - y0(d.Education_Males); });
+      .attr("y", function(d) { return y(d.Education_Males); })
+      .attr("height", function(d,i) { return height - y(d.Education_Males); });
 
       bars.append("rect")
       .attr("class", "bar2")
       .attr("x", function(d) { return x(d.State) + x.rangeBand()/2; })
       .attr("width", x.rangeBand()/2)
-      .attr("y", function(d) { return y1(d.Education_Females); })
-      .attr("height", function(d,i) { return height - y1(d.Education_Females); });
+      .attr("y", function(d) { return y(d.Education_Females); })
+      .attr("height", function(d,i) { return height - y(d.Education_Females); });
 
 });
-function type(d) {
-  d.Education_Males = +d.Education_Males
-    //d.Education_Females = +d.Education_Females
+
+legend = svg.append("g")
+  .attr("class","legend")
+  .attr("transform","translate(50,30)")
+  .style("font-size","12px")
+  .call(d3.legend)
+// function type(d) {
+//   d.Education_Males = +d.Education_Males
+//     d.Education_Females = +d.Education_Females
    
-   return d;
-}
+//    return d;
+// }
 </script>
 
-</body>
+</body>nm

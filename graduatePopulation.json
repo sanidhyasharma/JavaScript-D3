@@ -1,1 +1,177 @@
-[{"State":"State - JAMMU & KASHMIR","Education_Males":426555,"Education_Females":265929},{"State":"State - HIMACHAL PRADESH","Education_Males":293449,"Education_Females":223652},{"State":"State - UTTARAKHAND","Education_Males":568963,"Education_Females":433434},{"State":"State - RAJASTHAN","Education_Males":2461922,"Education_Females":1064619},{"State":"State - UTTAR PRADESH","Education_Males":7086446,"Education_Females":3811759},{"State":"State - BIHAR","Education_Males":2471458,"Education_Females":764190},{"State":"State - SIKKIM","Education_Males":24812,"Education_Females":18036},{"State":"State - ARUNACHAL PRADESH","Education_Males":58823,"Education_Females":28114},{"State":"State - NAGALAND","Education_Males":96513,"Education_Females":68531},{"State":"State - MANIPUR","Education_Males":178447,"Education_Females":115688},{"State":"State - MIZORAM","Education_Males":56437,"Education_Females":38959},{"State":"State - TRIPURA","Education_Males":107556,"Education_Females":58240},{"State":"State - MEGHALAYA","Education_Males":77020,"Education_Females":77942},{"State":"State - ASSAM","Education_Males":718327,"Education_Females":411992},{"State":"State - WEST BENGAL","Education_Males":3463977,"Education_Females":1891297},{"State":"State - JHARKHAND","Education_Males":1039975,"Education_Females":492195},{"State":"State - ODISHA","Education_Males":1303987,"Education_Females":661902},{"State":"State - CHHATTISGARH","Education_Males":799269,"Education_Females":417319},{"State":"State - MADHYA PRADESH","Education_Males":2311433,"Education_Females":1279956},{"State":"State - GUJARAT","Education_Males":2083498,"Education_Females":1388297},{"State":"State - DAMAN & DIU","Education_Males":8774,"Education_Females":4575},{"State":"State - DADRA & NAGAR HAVELI","Education_Males":13880,"Education_Females":7899},{"State":"State - MAHARASHTRA","Education_Males":5730823,"Education_Females":3774694},{"State":"State - ANDHRA PRADESH","Education_Males":4125374,"Education_Females":2182506},{"State":"State - KARNATAKA","Education_Males":2799580,"Education_Females":1696871},{"State":"State - GOA","Education_Males":77010,"Education_Females":75121},{"State":"State - LAKSHADWEEP","Education_Males":2682,"Education_Females":1606},{"State":"State - KERALA","Education_Males":1187364,"Education_Females":1474710},{"State":"State - TAMIL NADU","Education_Males":3495384,"Education_Females":2577695},{"State":"State - ANDAMAN & NICOBAR ISLANDS","Education_Males":13832,"Education_Females":10748},{"State":"State - PUNJAB","Education_Males":960456,"Education_Females":959213},{"State":"State - CHANDIGARH","Education_Males":111494,"Education_Females":94542},{"State":"State - HARYANA","Education_Males":1183849,"Education_Females":810751},{"State":"State - NCT OF DELHI","Education_Males":1636077,"Education_Females":1282115},{"State":"State - PUDUCHERRY","Education_Males":87072,"Education_Females":67712}]
+[
+  {
+    "State": "State - JAMMU & KASHMIR",
+    "Education_Males": 426555,
+    "Education_Females": 265929
+  },
+  {
+    "State": "State - HIMACHAL PRADESH",
+    "Education_Males": 293449,
+    "Education_Females": 223652
+  },
+  {
+    "State": "State - UTTARAKHAND",
+    "Education_Males": 568963,
+    "Education_Females": 433434
+  },
+  {
+    "State": "State - RAJASTHAN",
+    "Education_Males": 2461922,
+    "Education_Females": 1064619
+  },
+  {
+    "State": "State - UTTAR PRADESH",
+    "Education_Males": 7086446,
+    "Education_Females": 3811759
+  },
+  {
+    "State": "State - BIHAR",
+    "Education_Males": 2471458,
+    "Education_Females": 764190
+  },
+  {
+    "State": "State - SIKKIM",
+    "Education_Males": 24812,
+    "Education_Females": 18036
+  },
+  {
+    "State": "State - ARUNACHAL PRADESH",
+    "Education_Males": 58823,
+    "Education_Females": 28114
+  },
+  {
+    "State": "State - NAGALAND",
+    "Education_Males": 96513,
+    "Education_Females": 68531
+  },
+  {
+    "State": "State - MANIPUR",
+    "Education_Males": 178447,
+    "Education_Females": 115688
+  },
+  {
+    "State": "State - MIZORAM",
+    "Education_Males": 56437,
+    "Education_Females": 38959
+  },
+  {
+    "State": "State - TRIPURA",
+    "Education_Males": 107556,
+    "Education_Females": 58240
+  },
+  {
+    "State": "State - MEGHALAYA",
+    "Education_Males": 77020,
+    "Education_Females": 77942
+  },
+  {
+    "State": "State - ASSAM",
+    "Education_Males": 718327,
+    "Education_Females": 411992
+  },
+  {
+    "State": "State - WEST BENGAL",
+    "Education_Males": 3463977,
+    "Education_Females": 1891297
+  },
+  {
+    "State": "State - JHARKHAND",
+    "Education_Males": 1039975,
+    "Education_Females": 492195
+  },
+  {
+    "State": "State - ODISHA",
+    "Education_Males": 1303987,
+    "Education_Females": 661902
+  },
+  {
+    "State": "State - CHHATTISGARH",
+    "Education_Males": 799269,
+    "Education_Females": 417319
+  },
+  {
+    "State": "State - MADHYA PRADESH",
+    "Education_Males": 2311433,
+    "Education_Females": 1279956
+  },
+  {
+    "State": "State - GUJARAT",
+    "Education_Males": 2083498,
+    "Education_Females": 1388297
+  },
+  {
+    "State": "State - DAMAN & DIU",
+    "Education_Males": 8774,
+    "Education_Females": 4575
+  },
+  {
+    "State": "State - DADRA & NAGAR HAVELI",
+    "Education_Males": 13880,
+    "Education_Females": 7899
+  },
+  {
+    "State": "State - MAHARASHTRA",
+    "Education_Males": 5730823,
+    "Education_Females": 3774694
+  },
+  {
+    "State": "State - ANDHRA PRADESH",
+    "Education_Males": 4125374,
+    "Education_Females": 2182506
+  },
+  {
+    "State": "State - KARNATAKA",
+    "Education_Males": 2799580,
+    "Education_Females": 1696871
+  },
+  {
+    "State": "State - GOA",
+    "Education_Males": 77010,
+    "Education_Females": 75121
+  },
+  {
+    "State": "State - LAKSHADWEEP",
+    "Education_Males": 2682,
+    "Education_Females": 1606
+  },
+  {
+    "State": "State - KERALA",
+    "Education_Males": 1187364,
+    "Education_Females": 1474710
+  },
+  {
+    "State": "State - TAMIL NADU",
+    "Education_Males": 3495384,
+    "Education_Females": 2577695
+  },
+  {
+    "State": "State - ANDAMAN & NICOBAR ISLANDS",
+    "Education_Males": 13832,
+    "Education_Females": 10748
+  },
+  {
+    "State": "State - PUNJAB",
+    "Education_Males": 960456,
+    "Education_Females": 959213
+  },
+  {
+    "State": "State - CHANDIGARH",
+    "Education_Males": 111494,
+    "Education_Females": 94542
+  },
+  {
+    "State": "State - HARYANA",
+    "Education_Males": 1183849,
+    "Education_Females": 810751
+  },
+  {
+    "State": "State - NCT OF DELHI",
+    "Education_Males": 1636077,
+    "Education_Females": 1282115
+  },
+  {
+    "State": "State - PUDUCHERRY",
+    "Education_Males": 87072,
+    "Education_Females": 67712
+  }
+]

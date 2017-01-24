@@ -1,1 +1,42 @@
-[{"Literate_without_educational_level_Persons":42917688,"Below_Primary_Persons":187922838,"Primary_Persons":230286790,"Middle_Persons":165085953,"Matric_Secondary_Persons":123969998,"Higher_secondary_Intermediate_Pre_University_Senior_secondary_Persons":90159789,"Non_technical_diploma_or_certificate_not_equal_to_degree_Persons":1162928,"Technical_diploma_or_certificate_not_equal_to_degree_Persons":8290083,"Graduate_above_Persons":75595327,"Unclassified_Persons":3772888}]
+[
+  {
+    "Education_Categoty": "Literate_without_educational_level_Persons",
+    "Total_Population": 42917688
+  },
+  {
+    "Education_Categoty": "Below_Primary_Persons",
+    "Total_Population": 187922838
+  },
+  {
+    "Education_Categoty": "Primary_Persons",
+    "Total_Population": 230286790
+  },
+  {
+    "Education_Categoty": "Middle_Persons",
+    "Total_Population": 165085953
+  },
+  {
+    "Education_Categoty": "Matric_Secondary_Persons",
+    "Total_Population": 123969998
+  },
+  {
+    "Education_Categoty": "Higher_secondary_Intermediate_Pre_University_Senior_secondary_Persons",
+    "Total_Population": 90159789
+  },
+  {
+    "Education_Categoty": "Non_technical_diploma_or_certificate_not_equal_to_degree_Persons",
+    "Total_Population": 1162928
+  },
+  {
+    "Education_Categoty": "Technical_diploma_or_certificate_not_equal_to_degree_Persons",
+    "Total_Population": 8290083
+  },
+  {
+    "Education_Categoty": "Graduate_above_Persons",
+    "Total_Population": 75595327
+  },
+  {
+    "Education_Categoty": "Unclassified_Persons",
+    "Total_Population": 3772888
+  }
+]
